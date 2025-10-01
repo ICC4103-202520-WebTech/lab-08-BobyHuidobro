@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Lab 8 — Recipe Book Application: Authorization and User Roles
 
 ## Objective
@@ -45,4 +46,3 @@ By the end of this lab:
 - Regular users can only manage their own recipes.
 - Admins can manage all recipes.
 - Interface updated to reflect available actions according to user role.
-
