@@ -1,0 +1,11 @@
+<div class="container">
+    <h1>Recetas</h1>
+
+    <%= link_to "Nueva Receta", new_recipe_path, class: "btn btn-primary" %>
+
+    <ul>
+        <% @recipes.each do |recipe| %>
+            <li><%= link_to recipe.title, recipe_path(recipe) %> - <%= link_to "Eliminar", recipe_path(recipe), data: { turbo_method: :delete, turbo_confirm: "Estas seguro que quieres eliminarla?" } %></li>
+        <% end %>
+    </ul>
+</div>

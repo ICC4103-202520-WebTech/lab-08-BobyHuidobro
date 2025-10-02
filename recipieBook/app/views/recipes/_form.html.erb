@@ -1,0 +1,18 @@
+<%= form_with model: @recipe do |r| %>
+    <div class="col-4">
+        <%= r.label :title %>
+        <%= r.text_field :title, placeholder: "Título de la receta" %>
+    </div>
+    <div class="col-5">
+        <%= r.label :cook_time %>
+        <%= r.text_field :cook_time, placeholder: "Tiempo de preparación" %>
+    </div>
+    <div class="col-5">
+        <%= r.label :difficulty %>
+        <%= r.select :difficulty, ["Fácil", "Intermedio", "Difícil"], placeholder: "Dificultad" %>
+    </div> 
+    <div class="col-8">
+        <%= r.rich_textarea :instructions %>
+    </div>
+    <%= r.submit "Guardar", class: "btn btn-primary" %>
+<% end %>
