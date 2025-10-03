@@ -1,18 +1,18 @@
 <%= form_with model: @recipe do |r| %>
-    <div class="col-4">
-        <%= r.label :title %>
-        <%= r.text_field :title, placeholder: "Título de la receta" %>
+    <div class="col-4 mb-3">
+        <%= r.label :title, "Título", class: "form-label" %>
+        <%= r.text_field :title, placeholder: "Título de la receta", class: "form-control" %>
     </div>
-    <div class="col-5">
-        <%= r.label :cook_time %>
-        <%= r.text_field :cook_time, placeholder: "Tiempo de preparación" %>
+    <div class="col-5 mb-3">
+        <%= r.label :cook_time, "Tiempo de preparación", class: "form-label" %>
+        <%= r.text_field :cook_time, placeholder: "Tiempo de preparación", class: "form-control" %>
     </div>
-    <div class="col-5">
-        <%= r.label :difficulty %>
-        <%= r.select :difficulty, ["Fácil", "Intermedio", "Difícil"], placeholder: "Dificultad" %>
-    </div> 
-    <div class="col-8">
-        <%= r.rich_textarea :instructions %>
+    <div class="col-5 mb-3 ">
+        <%= r.label :difficulty, "Dificultad", class: "form-label" %>
+        <%= r.select :difficulty, ["Fácil", "Intermedio", "Difícil"], placeholder: "Dificultad", class: "form-select" %>
     </div>
-    <%= r.submit "Guardar", class: "btn btn-primary" %>
+    <div class="col-8 mb-3">
+        <%= r.rich_textarea :instructions, class: "form-control" %>
+    </div>
+    <%= link_to "Cancelar", recipes_path, class: "btn btn-danger" %> <%= r.submit "Guardar", class: "btn btn-primary" %>
 <% end %>

@@ -5,7 +5,7 @@
 
     <ul>
         <% @recipes.each do |recipe| %>
-            <li><%= link_to recipe.title, recipe_path(recipe) %> - <%= link_to "Eliminar", recipe_path(recipe), data: { turbo_method: :delete, turbo_confirm: "Estas seguro que quieres eliminarla?" } %></li>
+            <li><%= link_to recipe.title, recipe_path(recipe) %> - <%= link_to "Editar", edit_recipe_path(recipe) %> - <%= link_to "Eliminar", recipe_path(recipe), data: { turbo_method: :delete, turbo_confirm: "Estas seguro que quieres eliminarla?" } %></li>
         <% end %>
     </ul>
 </div>

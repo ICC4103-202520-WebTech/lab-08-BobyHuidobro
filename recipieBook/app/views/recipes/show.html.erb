@@ -1,4 +1,17 @@
 <div class="container">
     <h1><%= @recipe.title %></h1>
-    <p><%= @recipe.instructions %></p>
+    <div class="container">
+        <h4>Tiempo de preparación</h4>
+        <p><%= @recipe.cook_time %> minutos</p>
+    </div>
+    <div class="container">
+        <h4>Dificultad</h4>
+        <p><%= @recipe.difficulty %></p>
+    </div>
+    <div class="container">
+        <h4>Instrucciones</h4>
+        <p><%= @recipe.instructions %></p>
+    </div>
+
+    <%= link_to "Volver al menú", recipes_path, class: "btn btn-primary" %>
 </div>

@@ -13,22 +13,22 @@ class RecipesController < ApplicationController
     end
 
     def create
-        recipe = Recipe.new recipe_params
-        if recipe.save
-            redirect_to recipe_path(recipe)
+        @recipe = Recipe.new recipe_params
+        if @recipe.save
+            redirect_to recipe_path(@recipe)
         else
-            redirect_to new_recipe_path
+            redirect_to new_recipe_path, alert: @recipe.errors.full_messages.to_sentence
         end
     end
 
-    def ediit
+    def edit
     end
 
     def update
         if @recipe.update recipe_params
-            redirect_to recipe_path(@recipe)
+            redirect_to recipe_path(@recipe), notice: "Receta actualizada exitosamente"
         else
-            redirect_to edit_recipe_path(@recipe)
+            redirect_to edit_recipe_path(@recipe), alert: @recipe.errors.full_messages.to_sentence
         end
     end
 
