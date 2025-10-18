@@ -4,5 +4,7 @@ class Recipe < ApplicationRecord
     validates :difficulty, presence: true
     validates :instructions, presence: true
 
+    belongs_to :user
+
     has_rich_text :instructions
 end
