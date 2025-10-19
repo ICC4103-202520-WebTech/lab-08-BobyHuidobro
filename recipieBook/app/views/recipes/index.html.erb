@@ -3,7 +3,15 @@
 
     <ul>
         <% @recipes.each do |recipe| %>
-            <li><%= link_to recipe.title, recipe_path(recipe) %> - <%= link_to "Editar", edit_recipe_path(recipe) %> - <%= link_to "Eliminar", recipe_path(recipe), data: { turbo_method: :delete, turbo_confirm: "Estas seguro que quieres eliminarla?" } %></li>
+            <li>
+                <%= link_to recipe.title, recipe_path(recipe) %>
+                <% if can?(:edit, recipe) %>
+                    - <%= link_to "Editar", edit_recipe_path(recipe) %>
+                <% end %>
+                <% if can?(:destroy, recipe) %>
+                    - <%= link_to "Eliminar", recipe_path(recipe), data: { turbo_method: :delete, turbo_confirm: "Estas seguro que quieres eliminarla?" } %>
+                <% end %>
+            </li>
         <% end %>
     </ul>
 </div>

@@ -5,7 +5,10 @@ class Ability
 
   def initialize(user)
 
-    can [:read, :create], Recipe
+    can :read, Recipe
+
+    return unless user.present?
+    can :create, Recipe
 
     return unless user.present?
     can [ :update, :destroy], Recipe, user:user
